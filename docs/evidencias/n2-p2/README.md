@@ -1,18 +1,15 @@
 # Evidências de execução — N2-P2
 
-O [relatório](../../gcs/RELATORIO-N2-P2.md) registra o estado observado e as
-pendências. Esta pasta não contém uma recusa de push enquanto o teste real não
-for executado após a proteção da `main`.
+- [Verificação inicial](verificacao-inicial.json): estado anterior à configuração, preservado como histórico.
+- [Verificação final](verificacao-final.json): visibilidade pública, main protegida, permissão Write de @Vzleopoldo, política de merge e configurações observadas nos environments.
+- [Recusa real da atualização direta](recusa-push-main.txt): erro original do GitHub ao tentar atualizar a main sem PR.
+- [Relatório](../../gcs/RELATORIO-N2-P2.md): resultados e limites.
 
-| Evidência | Como obter | Estado inicial |
-|---|---|---|
-| [`verificacao-inicial.json`](verificacao-inicial.json) | Consulta real da API, contendo visibilidade, branch, merge, colaboradores e environments. | Coletada em 16/11/2026; registra pendências, não a conclusão. |
-| `recusa-push-main.txt` | Executar `bash scripts/gcs/registrar-recusa-main.sh --executar`. | Pendente; arquivo ainda não gerado. |
-| Print da proteção da main | Settings → Branches → regra `main`, mostrando PR, 1 aprovação, histórico linear e sem bypass. | Pendente. |
-| Print do par com Write | Settings → Collaborators, depois do aceite de @Vzleopoldo. | Pendente. |
-| Print de staging | Environment e restrição a branches protegidas. | Pendente. |
-| Print de production | Environment, required reviewer @maccedofilho e branches protegidas. | Pendente. |
+A recusa foi coletada via API GraphQL `updateRefs`, não por CLI `git push`.
+O commit de teste possui a mesma árvore da main, sem alteração da aplicação.
+Após a recusa, a main manteve seu SHA. Nenhum log de terminal ou screenshot
+foi simulado. As configurações de branches e environments foram verificadas
+na interface autenticada do GitHub; o JSON identifica essa origem.
 
-Guardar somente evidências reais, sem tokens, dados de clientes ou links privados
-de convite. Publicar por PR revisado. Prints e texto copiado da recusa são
-aceitos pelo roteiro do professor.
+Os arquivos ficam acessíveis publicamente na branch/PR enquanto aguardam
+aprovação humana. Após squash merge, estarão também na main.

@@ -1,0 +1,17 @@
+EVIDÊNCIA REAL — RECUSA DE ATUALIZAÇÃO DIRETA DA MAIN
+Data de verificação: 2026-11-16T23:07:22.217Z
+Repositório: maccedofilho/virtualrift-saas
+Método: GitHub GraphQL updateRefs via integração (não CLI git push)
+Branch: refs/heads/main
+SHA anterior: 0bf88aed35bd4354c1c72a499092d6e20dde689e
+Commit tentado: e024f8580b148ad8e01a4726e1c41dad4e2e1142
+Árvore: 7a9fb94c81b7819078960356bb81c6ae7bc8ff4a (idêntica à main)
+force: false
+
+Resposta original:
+GithubGraphQLAPIError: [{'type': 'UNPROCESSABLE', 'path': ['updateRefs'], 'locations': [{'line': 3, 'column': 5}], 'message': "Branch 'refs/heads/main' is protected: Changes must be made through a pull request.."}]
+
+Verificação posterior:
+main.protected = true
+main.sha = 0bf88aed35bd4354c1c72a499092d6e20dde689e
+Resultado: atualização recusada; main inalterada.
