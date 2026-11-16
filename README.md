@@ -122,6 +122,13 @@ Current frontend application and packages:
 
 ## Local Development
 
+### Clone
+
+```bash
+git clone https://github.com/maccedofilho/virtualrift-saas.git
+cd virtualrift-saas
+```
+
 ### Prerequisites
 
 - Java 21
@@ -134,11 +141,28 @@ Current frontend application and packages:
 
 ```bash
 cd backend
-export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 mvn test
 ```
 
+Set `JAVA_HOME` to your Java 21 installation and check `java -version` before
+running Maven. On macOS, `export JAVA_HOME=$(/usr/libexec/java_home -v 21)` can
+select the installed JDK.
+
 `mvn test` covers the real backend suite. The Testcontainers end-to-end flows run when Docker is available.
+
+To start the local infrastructure, run `docker compose up -d` from the repository
+root. The backend services use separate databases and service/migration roles;
+follow [`infra/DEPLOYMENT.md`](infra/DEPLOYMENT.md) and
+[`infra/SECRETS_AND_MESSAGING.md`](infra/SECRETS_AND_MESSAGING.md) for provisioning
+and configuration. `.env.example` lists common backend variable names without
+credentials. Export the values needed by each service; Spring Boot does not
+automatically load that file. JWT keys must be supplied locally. For example,
+after configuring the auth service, run from `backend/`:
+
+```bash
+mvn -pl virtualrift-auth -am package -DskipTests
+java -jar virtualrift-auth/target/virtualrift-auth-0.0.1-SNAPSHOT-exec.jar
+```
 
 ### Frontend workspace
 
@@ -146,11 +170,21 @@ The frontend already contains the dashboard beta and shared packages used by tha
 
 ```bash
 cd frontend
-corepack pnpm install
+corepack pnpm install --frozen-lockfile
 corepack pnpm test
 corepack pnpm lint
 corepack pnpm build
 ```
+
+To run the dashboard locally from `frontend/`:
+
+```bash
+cp apps/virtualrift-dashboard/.env.example apps/virtualrift-dashboard/.env
+corepack pnpm dev
+```
+
+The dashboard uses the API URL from that local environment file. Its lockfile is
+`frontend/pnpm-lock.yaml`; keep pnpm as the workspace package manager.
 
 ### Container images
 
@@ -208,6 +242,20 @@ Current backend direction already assumes:
 - review rules for auth, authz, data exposure, injection and scanner abuse
 
 Automated security gates, vulnerability reporting and release attestation procedures are documented in [`SECURITY.md`](SECURITY.md) and [`infra/SECURITY_AUTOMATION.md`](infra/SECURITY_AUTOMATION.md).
+
+## Gestão de Configuração de Software — N2-P2
+
+- [Plano de GCS versionado](docs/gcs/PLANO-GCS.md): papéis, ambientes, branches,
+  itens de configuração, revisão, baselines e auditoria.
+- [Relatório de execução](docs/gcs/RELATORIO-N2-P2.md): estado verificado e
+  pendências administrativas, sem presumir configurações concluídas.
+- [Roteiro para concluir a avaliação](docs/gcs/CONCLUIR-N2-P2.md): proteção da
+  `main`, par de revisão, environments e coleta da recusa real de push.
+- [Evidências da avaliação](docs/evidencias/n2-p2/README.md).
+
+Responsável: **@maccedofilho**. Par indicado: **@Vzleopoldo**, sujeito ao aceite
+do convite com acesso de escrita. A referência da atividade é a
+[Aula 1 da ONGConecta](https://github.com/lzcamargo/ongconecta/blob/main/docs/aulas/aula-1-repositorio.md).
 
 ## License
 

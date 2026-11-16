@@ -1,0 +1,37 @@
+{
+  "coletado_em_utc": "2026-11-16T22:42:01.773013+00:00",
+  "finalidade": "Verificação inicial real; não representa configurações concluídas nem recusa de push.",
+  "repositorio": {
+    "url": "https://github.com/maccedofilho/virtualrift-saas",
+    "visibility": "public",
+    "default_branch": "main"
+  },
+  "main": {
+    "name": "main",
+    "protected": false,
+    "sha": "765db237a1b28f562235d42f3d31e1a2c8fabf2f"
+  },
+  "merge": {
+    "allow_merge_commit": true,
+    "allow_rebase_merge": true,
+    "allow_squash_merge": true,
+    "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+    "squash_merge_commit_message": "COMMIT_MESSAGES",
+    "delete_branch_on_merge": false
+  },
+  "colaboradores": [
+    {
+      "login": "maccedofilho",
+      "role_name": "admin",
+      "push": true
+    }
+  ],
+  "environments": [
+    {
+      "name": "staging",
+      "protection_rules": [],
+      "deployment_branch_policy": null
+    }
+  ],
+  "limite_administrativo": "HTTP 403 Resource not accessible by integration nas tentativas de configuração; não comprova proteção de branch."
+}
