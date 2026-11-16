@@ -1,0 +1,11 @@
+# Responsável pelos itens de configuração do VirtualRift.
+# A revisão por outra pessoa continua obrigatória na proteção da main.
+# CODEOWNERS não concede acesso: o par deve aceitar o convite com Write.
+* @maccedofilho
+/backend/ @maccedofilho
+/frontend/ @maccedofilho
+/libs/ @maccedofilho
+/infra/ @maccedofilho
+/.github/ @maccedofilho
+/docs/ @maccedofilho
+/scripts/ @maccedofilho
