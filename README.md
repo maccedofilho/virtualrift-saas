@@ -247,14 +247,13 @@ Automated security gates, vulnerability reporting and release attestation proced
 
 - [Plano de GCS versionado](docs/gcs/PLANO-GCS.md): papéis, ambientes, branches,
   itens de configuração, revisão, baselines e auditoria.
-- [Relatório de execução](docs/gcs/RELATORIO-N2-P2.md): estado verificado e
-  pendências administrativas, sem presumir configurações concluídas.
+- [Relatório de execução](docs/gcs/RELATORIO-N2-P2.md): configurações verificadas, teste de recusa e revisão registrada.
 - [Roteiro para concluir a avaliação](docs/gcs/CONCLUIR-N2-P2.md): proteção da
   `main`, par de revisão, environments e coleta da recusa real de push.
 - [Evidências da avaliação](docs/evidencias/n2-p2/README.md).
 
-Responsável: **@maccedofilho**. Par indicado: **@Vzleopoldo**, sujeito ao aceite
-do convite com acesso de escrita. A referência da atividade é a
+Responsável: **@maccedofilho**. Par de revisão: **@Vzleopoldo**, com acesso
+Write confirmado e aprovação registrada no [PR #133](https://github.com/maccedofilho/virtualrift-saas/pull/133). A referência da atividade é a
 [Aula 1 da ONGConecta](https://github.com/lzcamargo/ongconecta/blob/main/docs/aulas/aula-1-repositorio.md).
 
 ## License

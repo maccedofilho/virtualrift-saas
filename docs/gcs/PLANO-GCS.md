@@ -3,10 +3,10 @@
 | Identificação | Definição |
 |---|---|
 | Item de configuração | IC-DOC-001 |
-| Versão documental | 1.0 |
+| Versão documental | 1.1 |
 | Data | 16/11/2026 |
 | Responsável | @maccedofilho |
-| Par de revisão indicado | @Vzleopoldo — acesso efetivo depende do aceite do convite |
+| Par de revisão | @Vzleopoldo — acesso Write efetivo confirmado em 16/11/2026 |
 | Repositório oficial | <https://github.com/maccedofilho/virtualrift-saas> |
 | Referência didática | [Aula 1 — ONGConecta](https://github.com/lzcamargo/ongconecta/blob/main/docs/aulas/aula-1-repositorio.md) |
 
@@ -29,7 +29,7 @@ Aula 1 e aos cinco critérios da avaliação N2-P2.
 | Papel | Responsável | Responsabilidades |
 |---|---|---|
 | Desenvolvedor líder e gestor de configuração | @maccedofilho | Manter este plano, administrar o repositório, implementar mudanças e preservar as evidências. |
-| Par de revisão | @Vzleopoldo | Aceitar acesso Write, revisar PRs de outro autor, verificar os critérios de aceite e aprovar ou solicitar correções. |
+| Par de revisão | @Vzleopoldo | Manter acesso Write, revisar PRs de outro autor, verificar os critérios de aceite e aprovar ou solicitar correções. |
 | Responsável pela produção | @maccedofilho | Autorizar os deployments vinculados ao environment `production`. |
 | Avaliador | Professor da disciplina | Consultar o repositório público, o plano e as evidências de execução. |
 
@@ -148,8 +148,9 @@ por leitura, links e estrutura, sem alegar execução da suíte da aplicação.
 ### 5.2. Revisão e controle de acesso
 
 O revisor verifica o propósito, impactos, critérios de aceite, ausência de
-segredos e evidências de teste apropriadas. @Vzleopoldo precisa ter acesso Write
-efetivo: convite pendente e menção em CODEOWNERS não satisfazem esse requisito.
+segredos e evidências de teste apropriadas. @Vzleopoldo possui acesso Write
+efetivo, confirmado na execução desta entrega. Convite pendente e menção em
+CODEOWNERS, isoladamente, não satisfariam esse requisito.
 Não se deve habilitar aprovação obrigatória do CODEOWNER autor como substituto
 da revisão por pares, pois o autor não aprova o próprio PR.
 
@@ -157,7 +158,8 @@ da revisão por pares, pois o autor não aprova o próprio PR.
 
 Conferir plano publicado na branch padrão, acesso público, arquivos básicos,
 templates, acesso do par, squash, ambientes e proteção. Executar um push direto
-controlado somente depois de confirmar que a proteção inclui administradores.
+controlado ou tentar Commit changes pelo site somente depois de confirmar que
+a proteção inclui administradores.
 Guardar a saída real de recusa; erro de autenticação ou permissão da integração
 não comprova proteção da `main`. O procedimento está no
 [roteiro de conclusão](CONCLUIR-N2-P2.md).
@@ -165,8 +167,8 @@ não comprova proteção da `main`. O procedimento está no
 ## 6. Baselines, liberação e recuperação
 
 Uma baseline é identificada pelo SHA integrado na `main`, seus manifests,
-lockfiles e documentação. A baseline inicial da avaliação só será considerada
-completa após a resolução das pendências do relatório de execução.
+lockfiles e documentação. A baseline da avaliação e suas evidências são rastreadas no relatório de
+execução e nos PRs de documentação aprovados.
 
 O projeto já contém workflows de CI, imagens, deploy e rollback. A liberação
 operacional deve usar artefatos identificados pelo SHA, homologação em staging
@@ -182,4 +184,5 @@ de clientes ou URLs de convite privadas.
 
 | Versão | Data | Alteração |
 |---|---|---|
+| 1.1 | 16/11/2026 | Atualiza acesso Write confirmado e teste pelo site; preserva regras de revisão. |
 | 1.0 | 16/11/2026 | Plano inicial adaptado ao VirtualRift e aos critérios da Aula 1 / N2-P2. |

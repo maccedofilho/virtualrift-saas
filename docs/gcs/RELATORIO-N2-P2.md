@@ -9,7 +9,7 @@
 | Organização e plano publicado | Estrutura backend, frontend, libs e infra preservada; [plano de GCS](PLANO-GCS.md) publicado na main. |
 | Repositório acessível | Repositório público, confirmado pela API. |
 | Proteção da main | PR obrigatório, 1 aprovação, descarte de aprovações obsoletas, histórico linear e nenhum bypass, inclusive administrador. |
-| Recusa de atualização direta na main | Teste real recusado: `Changes must be made through a pull request`. [Texto completo](../evidencias/n2-p2/recusa-push-main.txt). |
+| Recusa de atualização direta na main | Teste pelo site: `You can’t commit to main because it is a protected branch`. [Texto e print](../evidencias/n2-p2/recusa-commit-site.md). |
 | Par com acesso de escrita | @Vzleopoldo com permissão efetiva `write`, confirmada pela API. Não é apenas convite pendente. |
 | staging | Criado; aceita somente branches protegidas. |
 | production | Criado; @maccedofilho como revisor obrigatório; self-review permitido; somente branches protegidas. |
@@ -22,6 +22,17 @@ O [registro inicial](../evidencias/n2-p2/verificacao-inicial.json) permanece com
 histórico anterior à configuração e não descreve mais o estado atual.
 
 ## Teste real de recusa
+
+### Pelo site (Commit changes)
+
+Com a conta do proprietário, foi editado um comentário Markdown inofensivo
+no README de evidências da main. Ao clicar **Commit changes...**, o GitHub
+bloqueou commit direto e apresentou somente a opção de criar branch e PR:
+**“You can’t commit to main because it is a protected branch”**.
+[Registro e screenshot real](../evidencias/n2-p2/recusa-commit-site.md).
+O teste foi cancelado e a edição descartada, sem criar commit ou branch.
+
+### Teste complementar via API
 
 Foi criado um commit vazio (mesma árvore da main, sem mudança de arquivos),
 e tentada a atualização direta de `refs/heads/main` via API GitHub GraphQL
@@ -50,8 +61,9 @@ Esta atualização é exclusivamente documental: nenhum código, dependência,
 workflow, secret ou deployment foi alterado. Não foram executados testes da
 aplicação. As evidências contêm respostas reais do GitHub sem credenciais.
 
-A atualização do relatório e das evidências é proposta por branch e pull
-request, respeitando a proteção. **Aprovação humana e merge deste PR ainda são
-necessários para que estes registros atualizados apareçam na main.** Não se
-alega revisão realizada. @Vzleopoldo pode revisar o diff e aprovar com sua
-própria conta; depois o responsável realiza squash merge sem bypass.
+O [PR #133](https://github.com/maccedofilho/virtualrift-saas/pull/133) foi aprovado
+por @Vzleopoldo às 23:12:39 UTC e integrado pelo mesmo colaborador às 23:13:04 UTC
+em 16/11/2026, no commit `4c441ae539be8ab90142e8f86e9bf46d0dc25425`.
+Esse registro comprova revisão por outra pessoa com acesso de escrita.
+Atualizações documentais posteriores seguem o mesmo fluxo de PR e aprovação,
+sem desativar a proteção.
