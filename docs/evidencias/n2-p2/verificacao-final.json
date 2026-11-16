@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-11-16T23:07:22.217Z",
+  "repository": "maccedofilho/virtualrift-saas",
+  "visibility": "public",
+  "private": false,
+  "main": {
+    "sha": "0bf88aed35bd4354c1c72a499092d6e20dde689e",
+    "protected": true
+  },
+  "peer": {
+    "username": "Vzleopoldo",
+    "response": {
+      "permission": "write"
+    }
+  },
+  "merge": {
+    "allow_squash_merge": true,
+    "allow_merge_commit": false,
+    "allow_rebase_merge": false,
+    "delete_branch_on_merge": true,
+    "squash_merge_commit_title": "PR_TITLE",
+    "squash_merge_commit_message": "PR_BODY"
+  },
+  "browser_verified": {
+    "main": {
+      "required_pull_request_reviews": 1,
+      "dismiss_stale_reviews": true,
+      "required_linear_history": true,
+      "do_not_allow_bypassing": true
+    },
+    "staging": {
+      "deployment_branches": "protected branches only"
+    },
+    "production": {
+      "required_reviewers": [
+        "maccedofilho"
+      ],
+      "prevent_self_review": false,
+      "deployment_branches": "protected branches only"
+    }
+  },
+  "rejected_direct_update": {
+    "method": "GitHub GraphQL updateRefs via connector (not git CLI push)",
+    "target": "refs/heads/main",
+    "attempted_commit": "e024f8580b148ad8e01a4726e1c41dad4e2e1142",
+    "same_tree_as_main": true,
+    "error": "GithubGraphQLAPIError: [{'type': 'UNPROCESSABLE', 'path': ['updateRefs'], 'locations': [{'line': 3, 'column': 5}], 'message': \"Branch 'refs/heads/main' is protected: Changes must be made through a pull request..\"}]"
+  }
+}
